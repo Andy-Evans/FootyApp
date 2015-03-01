@@ -5,6 +5,13 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyApi", "FootyApi\FootyApi.csproj", "{40386CDF-80DF-4BAD-901E-9D0C16B8799F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4F938476-B837-46CC-9066-53A07B51F5C8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyApp", "FootyApp\FootyApp.csproj", "{5DE81F8E-040A-446F-82B4-7E64FF7DF262}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
