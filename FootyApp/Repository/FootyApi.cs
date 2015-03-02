@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.ApplicationServices;
+using System.Web.Compilation;
 using FootApi.Models;
 using Newtonsoft.Json;
 
@@ -13,14 +16,17 @@ namespace FootyApp.Repository
 {
     public class FootyApi
     {
-        private const string webapi = "http://localhost:55031/";
+        private static string GetFootyApiUrl()
+        {
+            return System.Configuration.ConfigurationManager.AppSettings["FootyAppWebApi"];
+        }
 
         public static IEnumerable<Team> GetLeagueTeams()
         {
             using (WebClient webClient = new WebClient())
             {
                 return JsonConvert.DeserializeObject<List<Team>>(
-                    webClient.DownloadString(webapi + "api/league"));
+                    webClient.DownloadString(GetFootyApiUrl() + "api/league"));
             }
         }
 
@@ -28,7 +34,7 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(webapi);
+                client.BaseAddress = new Uri(GetFootyApiUrl());
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -43,7 +49,7 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(webapi);
+                client.BaseAddress = new Uri(GetFootyApiUrl());
 
                 // HTTP POST
                 HttpResponseMessage response = await client.DeleteAsync("api/league/" + id);
@@ -57,7 +63,7 @@ namespace FootyApp.Repository
             using (WebClient webClient = new WebClient())
             {
                 return JsonConvert.DeserializeObject<Team>(
-                    webClient.DownloadString(webapi + "api/league/" + id));
+                    webClient.DownloadString(GetFootyApiUrl() + "api/league/" + id));
             }
         }
 
@@ -65,7 +71,7 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(webapi);
+                client.BaseAddress = new Uri(GetFootyApiUrl());
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
