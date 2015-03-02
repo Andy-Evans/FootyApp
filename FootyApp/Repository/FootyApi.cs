@@ -13,12 +13,14 @@ namespace FootyApp.Repository
 {
     public class FootyApi
     {
+        private const string webapi = "http://localhost:55031/";
+
         public static IEnumerable<Team> GetLeagueTeams()
         {
             using (WebClient webClient = new WebClient())
             {
                 return JsonConvert.DeserializeObject<List<Team>>(
-                    webClient.DownloadString("http://localhost:55031/api/league"));
+                    webClient.DownloadString(webapi + "api/league"));
             }
         }
 
@@ -26,7 +28,7 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:55031/");
+                client.BaseAddress = new Uri(webapi);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -41,27 +43,13 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:55031/");
+                client.BaseAddress = new Uri(webapi);
 
                 // HTTP POST
                 HttpResponseMessage response = await client.DeleteAsync("api/league/" + id);
 
                 return response;
             }
-            //                // HTTP POST
-            //                var gizmo = new Product() {Name = "Gizmo", Price = 100, Category = "Widget"};
-            //                response = await client.PostAsJsonAsync("api/products", gizmo);
-            //                if (response.IsSuccessStatusCode)
-            //                {
-            //                    Uri gizmoUrl = response.Headers.Location;
-            //
-            //                    // HTTP PUT
-            //                    gizmo.Price = 80; // Update price
-            //                    response = await client.PutAsJsonAsync(gizmoUrl, gizmo);
-            //
-            //                    // HTTP DELETE
-            //                    response = await client.DeleteAsync("http://localhost:55031/api/league/"+id);
-            //                }
         }
 
         internal static Team GetLeagueTeam(int id)
@@ -69,7 +57,7 @@ namespace FootyApp.Repository
             using (WebClient webClient = new WebClient())
             {
                 return JsonConvert.DeserializeObject<Team>(
-                    webClient.DownloadString("http://localhost:55031/api/league/" + id));
+                    webClient.DownloadString(webapi + "api/league/" + id));
             }
         }
 
@@ -77,7 +65,7 @@ namespace FootyApp.Repository
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:55031/");
+                client.BaseAddress = new Uri(webapi);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
