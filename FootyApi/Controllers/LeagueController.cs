@@ -13,13 +13,23 @@ namespace FootApi.Controllers
     {
         // GET: api/league
         [HttpGet]
+        [Route("api/league")]
         public IEnumerable<Team> GetAllTeams()
         {
             return new LeagueRepository().GetAllTeams();
         }
 
+        // POST: api/league
+        [HttpPost]
+        [Route("api/league")]
+        public void AddNewTeamToLeague(Team team)
+        {
+            new LeagueRepository().Add(team);
+        }
+
         // GET: api/league/5
         [HttpGet]
+        [Route("api/league/{teamId}")]
         public HttpResponseMessage GetTeam(int teamId)
         {
             var team = new LeagueRepository().GetTeam(teamId);
@@ -27,22 +37,18 @@ namespace FootApi.Controllers
             return response;
         }
 
-        // POST: api/league
-        [HttpPost]
-        public void AddNewTeamToLeague(Team team)
-        {
-            new LeagueRepository().Add(team);
-        }
-
         // PUT: api/league/5
         [HttpPut]
-        public void UpdateTeamInLeague(int id, [FromBody]Team team)
+        [Route("api/league/{teamId}")]
+        public void UpdateTeamInLeague(int teamId, [FromBody]Team team)
         {
+            team.Id = teamId;
             new LeagueRepository().Update(team);
         }
 
         // DELETE: api/league/5
         [HttpDelete]
+        [Route("api/league/{teamId}")]
         public void DeleteTeam(int teamId)
         {
             new LeagueRepository().Delete(teamId);

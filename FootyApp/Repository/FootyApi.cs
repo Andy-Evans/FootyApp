@@ -81,8 +81,8 @@ namespace FootyApp.Repository
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                // HTTP POST
-                HttpResponseMessage response = await client.PostAsJsonAsync("api/league", team);
+                // HTTP PUT
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/league/" + team.Id, team);
 
                 return response;
             }

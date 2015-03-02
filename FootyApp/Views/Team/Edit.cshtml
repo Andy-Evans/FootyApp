@@ -9,16 +9,27 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Team</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
+        <hr/>
+        <dl class="dl-horizontal">
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+            @Html.HiddenFor(model => model.Id)
+            <dt>@Html.DisplayNameFor(model => model.Name)</dt>
+            <dd>@Html.TextBoxFor(model => model.Name)</dd>
+            <dt>@Html.DisplayNameFor(model => model.PitchType)</dt>
+            <dd>@Html.TextBoxFor(model => model.PitchType)</dd>
+            <dt>@Html.DisplayNameFor(model => model.PostCode)</dt>
+            <dd>@Html.TextBoxFor(model => model.PostCode)</dd>
+            <dt>@Html.DisplayNameFor(model => model.ContactName)</dt>
+            <dd>@Html.TextBoxFor(model => model.ContactName)</dd>
+            <dt>@Html.DisplayNameFor(model => model.ContactNumber)</dt>
+            <dd>@Html.TextBoxFor(model => model.ContactNumber)</dd>
+        </dl>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default"/>
             </div>
         </div>
     </div>

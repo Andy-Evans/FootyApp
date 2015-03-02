@@ -16,35 +16,35 @@ namespace WebApplication1
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "TeamApi",
-                routeTemplate: "api/league/{teamId}/team",
-                defaults: new {controller = "Team", id = RouteParameter.Optional}
-                );
+//            config.Routes.MapHttpRoute(
+//                name: "TeamApi",
+//                routeTemplate: "api/league/{teamId}/team",
+//                defaults: new {controller = "Team", id = RouteParameter.Optional}
+//                );
+//
+//            config.Routes.MapHttpRoute(
+//                name: "TeamPlayerApi",
+//                routeTemplate: "api/league/{teamId}/team/{playerId}",
+//                defaults: new {controller = "Team", id = RouteParameter.Optional}
+//                );
 
-            config.Routes.MapHttpRoute(
-                name: "TeamPlayerApi",
-                routeTemplate: "api/league/{teamId}/team/{playerId}",
-                defaults: new {controller = "Team", id = RouteParameter.Optional}
-                );
-
-            config.Routes.MapHttpRoute(
-                name: "LeagueTeamApi",
-                routeTemplate: "api/league/{teamId}",
-                defaults: new { controller = "League", id = RouteParameter.Optional }
-                );
-
-            config.Routes.MapHttpRoute(
-                name: "LeagueApi",
-                routeTemplate: "api/league",
-                defaults: new {controller = "League", id = RouteParameter.Optional}
-                );
+//            config.Routes.MapHttpRoute(
+//                name: "LeagueTeamApi",
+//                routeTemplate: "api/league/{teamId}",
+//                defaults: new { controller = "League", id = RouteParameter.Optional }
+//                );
 
 //            config.Routes.MapHttpRoute(
 //                name: "LeagueApi",
-//                routeTemplate: "api/{controller}/{id}",
-//                defaults: new {id = RouteParameter.Optional}
+//                routeTemplate: "api/league",
+//                defaults: new {controller = "League", id = RouteParameter.Optional}
 //                );
+
+            config.Routes.MapHttpRoute(
+                name: "LeagueApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new {id = RouteParameter.Optional}
+                );
         }
     }
 }
