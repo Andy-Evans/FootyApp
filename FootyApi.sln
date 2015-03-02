@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4F9384
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyApp", "FootyApp\FootyApp.csproj", "{5DE81F8E-040A-446F-82B4-7E64FF7DF262}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyApp", "FootyApp\FootyApp.csproj", "{E5CB64C8-F559-41ED-A850-234998807982}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40386CDF-80DF-4BAD-901E-9D0C16B8799F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DE81F8E-040A-446F-82B4-7E64FF7DF262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CB64C8-F559-41ED-A850-234998807982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CB64C8-F559-41ED-A850-234998807982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CB64C8-F559-41ED-A850-234998807982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CB64C8-F559-41ED-A850-234998807982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

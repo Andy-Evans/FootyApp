@@ -16,7 +16,16 @@ namespace FootApi.Controllers
 
         public int AddTeam(Team team)
         {
-            team = new Team(teams.Count + 1, team.Name, team.Position);
+            team = new Team
+            {
+                Id = teams.Count + 1,
+                Name = team.Name,
+                PostCode = team.PostCode,
+                PitchType = team.PitchType,
+                ContactName = team.ContactName,
+                ContactNumber = team.ContactNumber
+            };
+         
             teams.Add(team);
             return team.Id;
         }

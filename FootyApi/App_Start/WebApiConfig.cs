@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Http;
+using FootApi.Models;
 
 namespace WebApplication1
 {
@@ -30,7 +31,7 @@ namespace WebApplication1
             config.Routes.MapHttpRoute(
                 name: "LeagueTeamApi",
                 routeTemplate: "api/league/{teamId}",
-                defaults: new {controller = "League", id = RouteParameter.Optional}
+                defaults: new { controller = "League", id = RouteParameter.Optional }
                 );
 
             config.Routes.MapHttpRoute(
