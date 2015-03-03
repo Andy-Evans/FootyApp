@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Http;
-using FootApi.Models;
 
 namespace WebApplication1
 {

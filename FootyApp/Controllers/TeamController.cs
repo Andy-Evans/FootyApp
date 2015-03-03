@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using FootApi.Models;
+using FootyApi.Models;
 using FootyApp.Repository;
 
 namespace FootyApp.Controllers
@@ -14,14 +10,14 @@ namespace FootyApp.Controllers
         // GET: Team
         public ActionResult Index()
         {
-            IEnumerable<Team> teams = FootyApi.GetLeagueTeams();
+            IEnumerable<Team> teams = FootyApiService.GetLeagueTeams();
             return View(teams);
         }
 
         // GET: Team/Details/5
         public ActionResult Details(int id)
         {
-            Team team = FootyApi.GetLeagueTeam(id);
+            Team team = FootyApiService.GetLeagueTeam(id);
             return View(team);
         }
 
@@ -37,7 +33,7 @@ namespace FootyApp.Controllers
         {
             try
             {
-                FootyApi.AddLeagueTeam(team);
+                FootyApiService.AddLeagueTeam(team);
 
                 return RedirectToAction("Index");
             }
@@ -50,7 +46,7 @@ namespace FootyApp.Controllers
         // GET: Team/Edit/5
         public ActionResult Edit(int id)
         {
-            Team team = FootyApi.GetLeagueTeam(id);
+            Team team = FootyApiService.GetLeagueTeam(id);
             return View(team);
         }
 
@@ -60,7 +56,7 @@ namespace FootyApp.Controllers
         {
             try
             {
-                FootyApi.UpdateLeagueTeam(team);
+                FootyApiService.UpdateLeagueTeam(team);
 
                 return RedirectToAction("Index");
             }
@@ -73,7 +69,7 @@ namespace FootyApp.Controllers
         // GET: Team/Delete/5
         public ActionResult Delete(int id)
         {
-            Team team = FootyApi.GetLeagueTeam(id);
+            Team team = FootyApiService.GetLeagueTeam(id);
             return View(team);
         }
 
@@ -83,7 +79,7 @@ namespace FootyApp.Controllers
         {
             try
             {
-                FootyApi.DeleteLeagueTeam(id);
+                FootyApiService.DeleteLeagueTeam(id);
 
                 return RedirectToAction("Index");
             }

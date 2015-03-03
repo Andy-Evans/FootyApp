@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using FootApi.Models;
+using FootyApi.Models;
 
 
 namespace FootyApp.Controllers

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FootApi.Models
+namespace FootyApi.Models
 {
     public class Player
     {

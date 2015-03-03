@@ -1,9 +1,11 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using FootApi.Models;
+using FootApi.Controllers;
+using FootyApi.Domain;
+using FootyApi.Models;
 
-namespace FootApi.Controllers
+namespace FootyApi.Controllers
 {
     public class TeamController : ApiController
     {
